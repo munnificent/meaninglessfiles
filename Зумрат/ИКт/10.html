@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>10 класс - Расписание</title>
+<style>
+  body { font-family: Arial, sans-serif; }
+  header { background-color: #f4f4f4; padding: 10px; text-align: center; }
+  nav ul { list-style-type: none; padding: 0; }
+  nav ul li { display: inline; margin-right: 10px; }
+  nav ul li a { text-decoration: none; }
+  table { width: 100%; margin-top: 20px; border-collapse: collapse; }
+  th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+  th { background-color: #f4f4f4; }
+  .hidden { display: none; }
+</style>
+</head>
+<body>
+<header>
+  <h1>10 класс</h1>
+</header>
+
+<nav>
+  <ul>
+    <li><a href="#" onclick="showSchedule('monday')">Понедельник</a></li>
+    <li><a href="#" onclick="showSchedule('tuesday')">Вторник</a></li>
+    <li><a href="#" onclick="showSchedule('Wednesday')">Срида</a></li>
+    <li><a href="#" onclick="showSchedule('Thursday')">Четверг</a></li>
+    <li><a href="#" onclick="showSchedule('Saturday')">Пятница</a></li>
+    <li><a href="#" onclick="showSchedule('tuesday')">Ад</a></li>
+  </ul>
+</nav>
+
+<main>
+  <section id="monday" class="hidden">
+    <table>
+      <tr>
+        <th>Урок</th>
+        <th>10Ф</th>
+        <th>10В</th>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>Математика</td>
+        <td>Литература</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>Физика</td>
+        <td>История</td>
+      </tr>
+    </table>
+  </section>
+
+  <section id="tuesday" class="hidden">
+    <table>
+      <tr>
+        <th>Урок</th>
+        <th>10Ф</th>
+        <th>10В</th>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>Химия</td>
+        <td>Биология</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>Иностранный язык</td>
+        <td>География</td>
+      </tr>
+    </table>
+  </section>
+  <a href="rasp.html" class="back-button">Вернуться к выбору классов</a>
+</main>
+
+<script>
+function showSchedule(dayId) {
+  document.querySelectorAll('main section').forEach(function(section) {
+    section.classList.add('hidden');
+  });
+  
+  document.getElementById(dayId).classList.remove('hidden');
+}
+</script>
+</body>
+</html>
